@@ -1,0 +1,32 @@
+.header {
+    color:black;
+    text-align: center;
+    padding: 75px;
+    font-size: 35px;
+}
+
+#question {
+    border-radius: 25px;
+    border: 7px solid pink;
+    background-color: skyblue;
+}
+
+.container {
+    height: 200px;
+    position: relative;
+  }
+  
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  
+}
+
+#start {
+    font-size: 45px;
+    background-color: pink;
+    border: 7px solid skyblue;
+}
