@@ -30,3 +30,13 @@
     background-color: pink;
     border: 7px solid skyblue;
 }
+
+#time {
+    text-align: center;
+    font-size: 50px;
+}
+
+.button {
+    color: green;
+    font-size: 50px;
+}
