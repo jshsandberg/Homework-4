@@ -1,7 +1,7 @@
 .header {
     color:black;
     text-align: center;
-    padding: 75px;
+    padding: 50px;
     font-size: 35px;
 }
 
@@ -29,6 +29,8 @@
     font-size: 45px;
     background-color: pink;
     border: 7px solid skyblue;
+    z-index: -10;
+    border-radius: 25px;
 }
 
 #time {
@@ -37,6 +39,34 @@
 }
 
 .button {
-    color: green;
     font-size: 50px;
+    border-radius: 25px;
+    margin: 30px;
+    background-color: pink;
+    border: 7px solid skyblue;
+    
+}
+
+.qBtn {
+    text-align: center;
+    
+}
+
+.msg {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+#aDiv {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.picture {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 0px;
+
 }

@@ -1,13 +1,17 @@
 //start quiz button click event listener;
 let timeFun;
 
-document.getElementById("start").addEventListener("click", ()=>{
-    timeFun = setInterval(timer, 1000);
-    appendQ(); 
-    });
+const start = document.getElementById("start");
+// .addEventListener("click", ()=>{
+//     timeFun = setInterval(timer, 1000);
+//     start.remove()
+//     appendQ();
+
+//});
 const qDiv = document.getElementById("qDiv");
 const aDiv = document.getElementById("aDiv");
 const msg = document.getElementById("msg")
+const fDiv = document.getElementById(`fDiv`);
 let current = 0;
 let time = 60;
 let answer = 0;
@@ -39,11 +43,17 @@ const qArray= [
     },
     {
         q: "Great Work! Let's see how you did!",
-        a: "",
+        a: ``,
         c: ""
     }
 ]
 
+start.addEventListener("click", ()=>{
+    timeFun = setInterval(timer, 1000);
+    start.remove()
+    appendQ();
+
+})
 aDiv.addEventListener("click", function(event){
     checkAnswer(event.target.textContent)
 })
@@ -53,17 +63,19 @@ aDiv.addEventListener("click", function(event){
 function appendQ(){
     aDiv.innerHTML = ""
     qDiv.textContent = qArray[current].q;
+    qDiv.setAttribute(`class`, `qBtn`);
     for(let i = 0;i<qArray[current].a.length; i++){
        const btn = document.createElement("button");
        btn.textContent = qArray[current].a[i];
        aDiv.appendChild(btn);
        btn.setAttribute(`class`, "button")
-    }
+    }  
 }
 
 function checkAnswer(str){
     if(qArray[current].c === str){
         answer += 1;
+        console.log(answer)
         msg.textContent = "CORRECT!";
         
     }else{
@@ -78,9 +90,11 @@ function checkAnswer(str){
 function timer(){
     document.getElementById("time").textContent = time;
     time--;
-    if(time === 0){
-        aDiv.textContent = "All Done! Lets see how you did!";
+    if(time === -1){
+        let fdiv = answer
+        fDiv.textContent = "You got $(answer) right!";
        clearInterval(timeFun);
+       document.createElement(`button`);
     }
 }
 
